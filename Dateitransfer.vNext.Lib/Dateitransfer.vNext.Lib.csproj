@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Data\DateitransferContext.cs" />
     <Compile Include="Migrations\201605151422360_InitialModelCreated.cs" />
     <Compile Include="Migrations\201605151422360_InitialModelCreated.Designer.cs">

@@ -11,5 +11,7 @@ namespace Dateitransfer.vNext.Lib.Model
         public int Id { get; set; }
         public string Directory { get; set; }
 
+        public virtual Input Input { get; set; }
+        public int InputId { get; set; }
     }
 }

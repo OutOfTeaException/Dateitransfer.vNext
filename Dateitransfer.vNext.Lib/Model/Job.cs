@@ -10,8 +10,10 @@ namespace Dateitransfer.vNext.Lib.Model
     {
         public int Id { get; set; }
         public string Cron { get; set; }
-        public virtual Input Input { get; set; }
         public bool IsEnabled { get; set; }
-        public DateTime LastRun { get; set; }
+        public DateTime? LastRun { get; set; }
+
+        public virtual Input Input { get; set; }
+        public int InputId { get; set; }
     }
 }

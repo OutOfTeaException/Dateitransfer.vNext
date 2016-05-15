@@ -12,6 +12,10 @@ namespace Dateitransfer.vNext.Lib.Model
         public string Name { get; set; }
         public string Directory { get; set; }
         public string FileMask { get; set; }
+
         public virtual ICollection<Output> Outputs { get; set; }
+
+        public virtual Job Job { get; set; }
+        public int JobId { get; set; }
     }
 }

@@ -14,6 +14,10 @@ namespace Dateitransfer.vNext.Lib.Data
         public DbSet<Input> Inputs { get; set; }
         public DbSet<Output> Outputs { get; set; }
 
+        public DateitransferContext() : base("DateitransferContext")
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Input>()

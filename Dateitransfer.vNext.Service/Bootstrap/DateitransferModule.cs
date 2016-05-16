@@ -16,6 +16,7 @@ namespace Dateitransfer.vNext.Service.Bootstrap
 
             Bind<MapperConfiguration>().ToConstant(mapperConfig).InSingletonScope();
             Bind<Dateitransfer.vNext.Lib.Service.JobService>().ToSelf();
+            Bind<Dateitransfer.vNext.Lib.Data.DateitransferContext>().ToSelf();
         }
     }
 }

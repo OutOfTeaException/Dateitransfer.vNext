@@ -28,23 +28,24 @@ namespace Dateitransfer.vNext.Service.Jobs
             // 2. Quartz Jobs erstellen
             // 3. Quartz JObs starten
             log.Info("Starte Jobs...");
-
+            
             try
             {
                 log.Debug("Lade Jobs aus Datenbank...");
                 var jobs = jobService.GetAllJobs().Where(j => j.IsEnabled);
                 log.Debug("Jobs aus Datenbank geladen.");
-
+                    
                 foreach (var job in jobs)
                 {
                     log.Debug($"Erstelle Job {job.Name}...");
-
+                    
                     IJobDetail quartzJob = JobBuilder.Create<DateitransferJob>()
-                       .WithIdentity(job.Name, "group1")
+                       .WithIdentity($"{job.Id} - {job.Name}", "group1")
+                       .UsingJobData("Id", job.Id)
                        .Build();
 
                     ITrigger trigger = TriggerBuilder.Create()
-                       .WithIdentity(job.Name, "group1")
+                       .WithIdentity($"{job.Id} - {job.Name}", "group1")
                        .StartNow()
                        .WithCronSchedule(job.Cron)
                        .Build();

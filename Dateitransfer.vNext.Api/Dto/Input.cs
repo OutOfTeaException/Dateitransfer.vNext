@@ -13,7 +13,7 @@ namespace Dateitransfer.vNext.Api.Dto
         public string Directory { get; set; }
         public string FileMask { get; set; }
 
-        public virtual ICollection<Output> Outputs { get; set; }
+        public virtual List<Output> Outputs { get; set; }
 
         public int JobId { get; set; }
     }

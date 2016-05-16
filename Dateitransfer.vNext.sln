@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateitransfer.vNext.Service", "Dateitransfer.vNext.Service\Dateitransfer.vNext.Service.csproj", "{9CE09238-E883-463A-8AFB-6969B4CCEC1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateitransfer.vNext.Lib", "Dateitransfer.vNext.Lib\Dateitransfer.vNext.Lib.csproj", "{B3C03489-F361-4F24-ADE8-70018E779E4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateitransfer.vNext.MgmtWeb", "Dateitransfer.vNext.MgmtWeb\Dateitransfer.vNext.MgmtWeb.csproj", "{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B3C03489-F361-4F24-ADE8-70018E779E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3C03489-F361-4F24-ADE8-70018E779E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3C03489-F361-4F24-ADE8-70018E779E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

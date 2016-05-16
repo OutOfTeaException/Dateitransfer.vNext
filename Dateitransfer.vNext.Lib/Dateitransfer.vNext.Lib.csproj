@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201605151437209_AlterJobSetLastRunToNullable.Designer.cs">
       <DependentUpon>201605151437209_AlterJobSetLastRunToNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605161036399_AddedNameToJob.cs" />
+    <Compile Include="Migrations\201605161036399_AddedNameToJob.Designer.cs">
+      <DependentUpon>201605161036399_AddedNameToJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Input.cs" />
     <Compile Include="Model\Job.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605151437209_AlterJobSetLastRunToNullable.resx">
       <DependentUpon>201605151437209_AlterJobSetLastRunToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161036399_AddedNameToJob.resx">
+      <DependentUpon>201605161036399_AddedNameToJob.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

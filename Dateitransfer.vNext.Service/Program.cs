@@ -3,11 +3,6 @@ using log4net;
 using log4net.Core;
 using Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dateitransfer.vNext.Service
 {
@@ -17,6 +12,7 @@ namespace Dateitransfer.vNext.Service
 
         static void Main(string[] args)
         {
+            //TODO: Aus app.config laden
             const int webApiPort = 12345;
             log.Info("Starte Anwendung...");
             
@@ -27,7 +23,7 @@ namespace Dateitransfer.vNext.Service
             using (Microsoft.Owin.Hosting.WebApp.Start(webApiBaseAddress, (appBuilder) =>
             {
                 // Hier wird der WebApi Krams und der IoC Container initialisiert
-                new StartupWebApi().Configuration(appBuilder, DateitransferKernel.CreateKernel);
+                new Bootstrap.StartupWebApi().Configuration(appBuilder, Bootstrap.DateitransferKernel.CreateKernel);
             }))
             {
                 log.InfoFormat("WebApi gestartet.");

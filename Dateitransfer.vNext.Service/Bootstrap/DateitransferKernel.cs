@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dateitransfer.vNext.Service
+namespace Dateitransfer.vNext.Service.Bootstrap
 {
     public class DateitransferKernel
     {

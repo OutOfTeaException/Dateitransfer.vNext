@@ -128,15 +128,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateitransferKernel.cs" />
-    <Compile Include="DateitransferModule.cs" />
+    <Compile Include="Bootstrap\DateitransferKernel.cs" />
+    <Compile Include="Bootstrap\DateitransferModule.cs" />
     <Compile Include="Dto\Input.cs" />
     <Compile Include="Dto\Job.cs" />
     <Compile Include="Dto\Output.cs" />
-    <Compile Include="ManagementController.cs" />
+    <Compile Include="WebApi\ManagementController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StartupWebApi.cs" />
+    <Compile Include="Bootstrap\StartupWebApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

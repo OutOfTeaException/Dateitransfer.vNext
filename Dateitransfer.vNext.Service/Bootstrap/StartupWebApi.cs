@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Dateitransfer.vNext.Service
+namespace Dateitransfer.vNext.Service.Bootstrap
 {
     public class StartupWebApi
     {

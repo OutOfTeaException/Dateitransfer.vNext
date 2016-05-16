@@ -27,9 +27,14 @@ namespace Dateitransfer.vNext.Service.WebApi
         }
 
         // GET api/values/5 
-        public string Get(int id)
+        public Dateitransfer.vNext.Api.Dto.Job Get(int jobId)
         {
-            return "value";
+            var jobEntity = jobService.GetJob(jobId);
+
+            var mapper = mapperConfiguration.CreateMapper();
+
+            return mapper.Map<Dateitransfer.vNext.Api.Dto.Job>(jobEntity);
         }
+
     }
 }

@@ -3,11 +3,6 @@ using Ninject.Web.Common.OwinHost;
 using Ninject.Web.WebApi.OwinHost;
 using Owin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Dateitransfer.vNext.Service.Bootstrap
@@ -16,7 +11,7 @@ namespace Dateitransfer.vNext.Service.Bootstrap
     {
         // This code configures Web API. The Startup class is specified as a type
         // parameter in the WebApp.Start method.
-        public void Configuration(IAppBuilder appBuilder, Func<IKernel> kernelCreator)
+        public void Configuration(IAppBuilder appBuilder, Func<IKernel> kernel)
         {
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
@@ -26,8 +21,9 @@ namespace Dateitransfer.vNext.Service.Bootstrap
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            appBuilder.UseNinjectMiddleware(kernelCreator)
-                        .UseNinjectWebApi(config);
+            // WebApi soll Ninject nutzen
+            appBuilder.UseNinjectMiddleware(kernel)
+                      .UseNinjectWebApi(config);
         }
     }
 }

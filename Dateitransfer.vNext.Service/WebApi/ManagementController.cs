@@ -1,12 +1,7 @@
-﻿using AutoMapper;
-using Dateitransfer.vNext.Lib.Model;
-using Dateitransfer.vNext.Lib.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using AutoMapper;
+using Dateitransfer.vNext.Lib.Service;
 
 namespace Dateitransfer.vNext.Service.WebApi
 {
@@ -22,13 +17,13 @@ namespace Dateitransfer.vNext.Service.WebApi
         }
         
         // GET api/values 
-        public IEnumerable<Dateitransfer.vNext.Service.Dto.Job> Get()
+        public IEnumerable<Dateitransfer.vNext.Api.Dto.Job> Get()
         {
             var mapper = mapperConfiguration.CreateMapper();
 
             var jobEntities = jobService.GetAllJobs();
 
-            return mapper.Map<IEnumerable<Dateitransfer.vNext.Service.Dto.Job>>(jobEntities);
+            return mapper.Map<IEnumerable<Dateitransfer.vNext.Api.Dto.Job>>(jobEntities);
         }
 
         // GET api/values/5 

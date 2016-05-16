@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateitransfer.vNext.Lib", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateitransfer.vNext.MgmtWeb", "Dateitransfer.vNext.MgmtWeb\Dateitransfer.vNext.MgmtWeb.csproj", "{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dateitransfer.vNext.Api", "Dateitransfer.vNext.Api\Dateitransfer.vNext.Api.csproj", "{F7C86BF1-31C8-4EA2-96E9-32E0E0E3AEA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB0DAE47-62FB-4B5F-B866-CD078E141DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C86BF1-31C8-4EA2-96E9-32E0E0E3AEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C86BF1-31C8-4EA2-96E9-32E0E0E3AEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C86BF1-31C8-4EA2-96E9-32E0E0E3AEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C86BF1-31C8-4EA2-96E9-32E0E0E3AEA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

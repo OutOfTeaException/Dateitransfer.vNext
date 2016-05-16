@@ -146,9 +146,6 @@
   <ItemGroup>
     <Compile Include="Bootstrap\DateitransferKernel.cs" />
     <Compile Include="Bootstrap\DateitransferModule.cs" />
-    <Compile Include="Dto\Input.cs" />
-    <Compile Include="Dto\Job.cs" />
-    <Compile Include="Dto\Output.cs" />
     <Compile Include="Jobs\DateitransferJob.cs" />
     <Compile Include="Jobs\JobScheduler.cs" />
     <Compile Include="WebApi\ManagementController.cs" />
@@ -167,10 +164,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dateitransfer.vNext.Api\Dateitransfer.vNext.Api.csproj">
+      <Project>{f7c86bf1-31c8-4ea2-96e9-32e0e0e3aea4}</Project>
+      <Name>Dateitransfer.vNext.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dateitransfer.vNext.Lib\Dateitransfer.vNext.Lib.csproj">
       <Project>{b3c03489-f361-4f24-ade8-70018e779e4d}</Project>
       <Name>Dateitransfer.vNext.Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dto\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

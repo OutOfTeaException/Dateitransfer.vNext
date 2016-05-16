@@ -9,9 +9,9 @@ namespace Dateitransfer.vNext.Service.Bootstrap
         {
             var mapperConfig = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Input, Dateitransfer.vNext.Service.Dto.Input>();
-                cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Output, Dateitransfer.vNext.Service.Dto.Output>();
-                cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Job, Dateitransfer.vNext.Service.Dto.Job>();
+                cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Input, Dateitransfer.vNext.Api.Dto.Input>();
+                cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Output, Dateitransfer.vNext.Api.Dto.Output>();
+                cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Job, Dateitransfer.vNext.Api.Dto.Job>();
             });
 
             Bind<MapperConfiguration>().ToConstant(mapperConfig).InSingletonScope();

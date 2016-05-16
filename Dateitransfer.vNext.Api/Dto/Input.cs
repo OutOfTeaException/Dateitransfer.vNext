@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dateitransfer.vNext.Service.Dto
+namespace Dateitransfer.vNext.Api.Dto
 {
     public class Input
     {
@@ -15,7 +15,6 @@ namespace Dateitransfer.vNext.Service.Dto
 
         public virtual ICollection<Output> Outputs { get; set; }
 
-        //public virtual Job Job { get; set; }
         public int JobId { get; set; }
     }
 }

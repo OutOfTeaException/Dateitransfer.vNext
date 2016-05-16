@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dateitransfer.vNext.Service.Dto
+namespace Dateitransfer.vNext.Api.Dto
 {
     public class Job
     {

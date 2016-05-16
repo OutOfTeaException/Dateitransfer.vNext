@@ -1,17 +1,21 @@
-﻿using Dateitransfer.vNext.MgmtWeb.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Dateitransfer.vNext.Api.Dto;
+using Dateitransfer.vNext.MgmtWeb.Services;
 
 namespace Dateitransfer.vNext.MgmtWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private JobService jobService = new JobService();
+
+        // TODO: IoC
+        //public HomeController(JobService jobService)
+        //{
+        //    this.jobService = jobService;
+        //}
+
         public ActionResult Index()
         {
-            var jobService = new JobService();
             var jobs = jobService.GetJobs();
 
             return View(jobs);
@@ -29,6 +33,18 @@ namespace Dateitransfer.vNext.MgmtWeb.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult EnableJob(int jobId, bool enable)
+        {
+            Job job = jobService.GetJob(jobId);
+
+            job.IsEnabled = enable;
+
+            jobService.Update(job);
+
+            return PartialView("_JobInfo", job);
         }
     }
 }

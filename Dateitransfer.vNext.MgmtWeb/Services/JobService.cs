@@ -1,9 +1,7 @@
-﻿using Dateitransfer.vNext.Api.Dto;
+﻿using System.Collections.Generic;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Dateitransfer.vNext.Api.Dto;
+
 
 namespace Dateitransfer.vNext.MgmtWeb.Services
 {
@@ -16,6 +14,21 @@ namespace Dateitransfer.vNext.MgmtWeb.Services
             var response = client.Execute<List<Job>>(request);
 
             return response.Data;
+        }
+
+        public Job GetJob(int jobId)
+        {
+            RestClient client = new RestClient("http://localhost:12345");
+            var request = new RestRequest("api/Management/{jobId}", Method.GET);
+            request.AddParameter("jobId", jobId);
+            var response = client.Execute<Job>(request);
+
+            return response.Data;
+        }
+
+        public void Update(Job job)
+        {
+
         }
     }
 }

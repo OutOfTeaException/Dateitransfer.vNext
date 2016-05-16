@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using log4net;
+using log4net.Core;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +13,26 @@ namespace Dateitransfer.vNext.Service
 {
     class Program
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+
         static void Main(string[] args)
         {
-            string webApiBaseAddress = "http://localhost:12345/";
+            const int webApiPort = 12345;
+            log.Info("Starte Anwendung...");
             
+            string webApiBaseAddress = $"http://localhost:{webApiPort}";
+            log.Info($"Starte WebApi auf Port {webApiPort}...");
+
             // Start WebApi host 
             using (Microsoft.Owin.Hosting.WebApp.Start<StartupWebApi>(url: webApiBaseAddress))
             {
-                Console.WriteLine("WebApi gestartet.");
+                log.InfoFormat("WebApi gestartet.");
+                log.Info("Anwendung gestartet.");
                 Console.ReadLine();
+                log.Info("Beende Anwendung...");
             }
+
+            log.Info("Anwendung beendet.");
         }
     }
 }

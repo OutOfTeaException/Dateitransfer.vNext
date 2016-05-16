@@ -12,23 +12,17 @@ namespace Dateitransfer.vNext.Service
 {
     public class ManagementController : ApiController
     {
-        private MapperConfiguration mapperConfig;
+        private MapperConfiguration mapperConfiguration;
+
+        public ManagementController(MapperConfiguration mapperConfiguration)
+        {
+            this.mapperConfiguration = mapperConfiguration;
+        }
+        
         // GET api/values 
         public IEnumerable<Dateitransfer.vNext.Service.Dto.Job> Get()
         {
-           
-
-            if (mapperConfig == null)
-            {
-                mapperConfig = new MapperConfiguration(cfg =>
-                {
-                    cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Input, Dateitransfer.vNext.Service.Dto.Input>();
-                    cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Output, Dateitransfer.vNext.Service.Dto.Output>();
-                    cfg.CreateMap<Dateitransfer.vNext.Lib.Model.Job, Dateitransfer.vNext.Service.Dto.Job>();
-                });
-            }
-
-            var mapper = mapperConfig.CreateMapper();
+            var mapper = mapperConfiguration.CreateMapper();
 
             JobService jobService = new JobService();
             var jobEntities = jobService.GetAllJobs();

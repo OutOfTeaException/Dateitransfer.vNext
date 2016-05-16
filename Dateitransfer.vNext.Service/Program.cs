@@ -24,7 +24,11 @@ namespace Dateitransfer.vNext.Service
             log.Info($"Starte WebApi auf Port {webApiPort}...");
 
             // Start WebApi host 
-            using (Microsoft.Owin.Hosting.WebApp.Start<StartupWebApi>(url: webApiBaseAddress))
+            using (Microsoft.Owin.Hosting.WebApp.Start(webApiBaseAddress, (appBuilder) =>
+            {
+                // Hier wird der WebApi Krams und der IoC Container initialisiert
+                new StartupWebApi().Configuration(appBuilder, DateitransferKernel.CreateKernel);
+            }))
             {
                 log.InfoFormat("WebApi gestartet.");
                 log.Info("Anwendung gestartet.");

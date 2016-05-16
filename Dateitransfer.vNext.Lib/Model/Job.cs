@@ -9,6 +9,7 @@ namespace Dateitransfer.vNext.Lib.Model
     public class Job
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public string Cron { get; set; }
         public bool IsEnabled { get; set; }
         public DateTime? LastRun { get; set; }

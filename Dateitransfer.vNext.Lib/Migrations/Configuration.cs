@@ -2,9 +2,7 @@ namespace Dateitransfer.vNext.Lib.Migrations
 {
     using Model;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Dateitransfer.vNext.Lib.Data.DateitransferContext>
     {
@@ -22,7 +20,7 @@ namespace Dateitransfer.vNext.Lib.Migrations
                 );
 
             context.Jobs.AddOrUpdate(j => j.Id,
-                new Job { Id = 1,  Name = "Job 1", IsEnabled = true, LastRun = new DateTime(2016, 01, 01), Cron = "TODO", InputId = 1 }
+                new Job { Id = 1,  Name = "Job 1", IsEnabled = true, LastRun = new DateTime(2016, 01, 01), Cron = "0/10 * * * * ?", InputId = 1 }
                 );
 
             context.Outputs.AddOrUpdate(o => o.Id,

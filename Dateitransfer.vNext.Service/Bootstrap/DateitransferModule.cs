@@ -1,10 +1,5 @@
 ﻿using AutoMapper;
 using Ninject.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dateitransfer.vNext.Service.Bootstrap
 {
@@ -20,6 +15,7 @@ namespace Dateitransfer.vNext.Service.Bootstrap
             });
 
             Bind<MapperConfiguration>().ToConstant(mapperConfig).InSingletonScope();
+            Bind<Dateitransfer.vNext.Lib.Service.JobService>().ToSelf();
         }
     }
 }

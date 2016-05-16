@@ -13,10 +13,12 @@ namespace Dateitransfer.vNext.Service.WebApi
     public class ManagementController : ApiController
     {
         private MapperConfiguration mapperConfiguration;
+        private JobService jobService;
 
-        public ManagementController(MapperConfiguration mapperConfiguration)
+        public ManagementController(MapperConfiguration mapperConfiguration, JobService jobService)
         {
             this.mapperConfiguration = mapperConfiguration;
+            this.jobService = jobService;
         }
         
         // GET api/values 
@@ -24,7 +26,6 @@ namespace Dateitransfer.vNext.Service.WebApi
         {
             var mapper = mapperConfiguration.CreateMapper();
 
-            JobService jobService = new JobService();
             var jobEntities = jobService.GetAllJobs();
 
             return mapper.Map<IEnumerable<Dateitransfer.vNext.Service.Dto.Job>>(jobEntities);
